@@ -16,7 +16,9 @@ namespace BlackDeathWing
             InitializeComponent();
         }
 
-
+        /// <summary>
+        /// Realease the beast. BlackDeathWing, Monster and Code.
+        /// </summary>
         public void star_bdw(){
             bool estado = false;
 	        int limiteInicial = 0;
