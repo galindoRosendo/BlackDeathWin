@@ -20,19 +20,28 @@ namespace BlackDeathWing
         /// Realease the beast. BlackDeathWing, Monster and Code.
         /// </summary>
         public void star_bdw(){
-            bool estado = false;
-	        int limiteInicial = 0;
-	        int limiteFinal = 1000000;
-	        int limiteSiguiente = 0;
-	        while(!estado){
-		        limiteInicial++;
-		        if(limiteInicial==limiteFinal){
-			        MessageBox.Show("Limite alcanzado se duplicara a " + (limiteFinal*2) );
-			        limiteFinal = limiteFinal * 2;
+            bool state = false;
+	        int initialLimit = 0;
+	        int finalLimit = 1000000;
+	        int nextLimit = 0;
+	        while(!state){
+		        initialLimit++;
+		        if(initialLimit==finalLimit){
+                    MessageBox.Show("Limit reached, doubling to: " + (finalLimit * 2), "Avante...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			        finalLimit = finalLimit * 2;
 		        }else{
-                    if (limiteInicial == (limiteFinal - 1))
-                    MessageBox.Show("Sigue, sigue y sigue...");
-		        }
+                    if (initialLimit == (finalLimit - 1))
+                    {
+                        DialogResult res = MessageBox.Show("Come on, it's almost done!!!...", "No fear to down", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        if (res == DialogResult.Yes)
+                            MessageBox.Show("Go, go and go...","Well done",MessageBoxButtons.OK);
+                        else
+                        {
+                            MessageBox.Show("Try till you colapse","Remember: ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            break;
+                        }
+                    }
+                    }
 	        }
         }
         private void btnStart_Click(object sender, EventArgs e)
