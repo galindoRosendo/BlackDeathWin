@@ -23,7 +23,6 @@ namespace BlackDeathWing
             bool state = false;
 	        int initialLimit = 0;
 	        int finalLimit = 1000000;
-	        int nextLimit = 0;
 	        while(!state){
 		        initialLimit++;
 		        if(initialLimit==finalLimit){
