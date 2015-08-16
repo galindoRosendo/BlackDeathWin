@@ -19,7 +19,8 @@ namespace BlackDeathWing
         /// <summary>
         /// Realease the beast. BlackDeathWing, Monster and Code.
         /// </summary>
-        public void star_bdw(){
+        /// <param name="name">The name of the user, dah!!! d-_-b </param>
+        public void star_bdw(string name){
             bool state = false;
 	        int initialLimit = 0;
 	        int finalLimit = 1000000;
@@ -31,21 +32,39 @@ namespace BlackDeathWing
 		        }else{
                     if (initialLimit == (finalLimit - 1))
                     {
-                        DialogResult res = MessageBox.Show("Come on, it's almost done!!!...", "No fear to down", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                        DialogResult res = MessageBox.Show("Come on "+ name +", it's almost done!!!...", "No fear to down", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                         if (res == DialogResult.Yes)
                             MessageBox.Show("Go, go and go...","Well done",MessageBoxButtons.OK);
                         else
                         {
-                            MessageBox.Show("Try till you colapse","Remember: ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            MessageBox.Show("Try till you colapse","Remember "+name+" ",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             break;
                         }
                     }
                     }
 	        }
         }
+
+        /// <summary>
+        /// Just typed all in one metod
+        /// </summary>
+        public void call_bdw()
+        {
+            string name = txtName.Text;
+            if (name.Equals(""))
+            {
+                MessageBox.Show("You'll be db.", "No name?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                name = "db";
+                star_bdw(name);
+            }
+            else
+            {
+                star_bdw(name);
+            }
+        }
         private void btnStart_Click(object sender, EventArgs e)
         {
-            star_bdw();
+            call_bdw();
         }
     }
 }
